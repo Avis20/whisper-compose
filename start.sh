@@ -11,6 +11,6 @@ if [ -z "$device" ]; then
     device="cpu";
 fi
 
-cmd="poetry run whisper $file --device $device --task transcribe --language Russian --output_format txt --model $model --output_dir ./transcribe";
+cmd="time poetry run whisper $file --device $device --task transcribe --language Russian --output_format txt --model $model --output_dir ./transcribe";
 echo "$cmd";
 bash -c "$cmd";
