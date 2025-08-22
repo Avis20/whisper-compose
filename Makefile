@@ -10,7 +10,7 @@ create_env: ## Just touching env files
 .PHONY: run
 run: create_env ## run services
 # make up service=media-backend
-	@docker compose run transcribe bash start.sh $(file) $(model) $(device)
+	@docker compose run --rm transcribe bash start.sh $(file) $(model) $(device)
 
 .PHONY: up
 up: create_env ## up services
