@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+
+  transcribe:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./video:/app/video
+      - ./transcribe:/app/transcribe
+      - ./pyproject.toml:/pyproject.toml
+      - ./start.sh:/app/start.sh
+    command: sleep infinity
