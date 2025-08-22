@@ -9,7 +9,9 @@ cmd="time poetry run whisper $file --task transcribe --language Russian --output
 
 device="$3"
 if [ -z "$device" ]; then
-    cmd="$cmd --device cpu";
+    cmd="$cmd";
+else
+    cmd="$cmd --device $device";
 fi
 
 echo "$cmd";
